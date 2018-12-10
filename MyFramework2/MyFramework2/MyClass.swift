@@ -9,7 +9,7 @@
 import Foundation
 
 open class MyClass {
-    open func sayHello() {
+    class open func sayHello() {
         print("MyFramework2 sayHello")
     }
 }
