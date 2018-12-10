@@ -10,6 +10,7 @@
 		211281F921BEBBB90016E7F9 /* MyFramework2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 211281EF21BEBBB90016E7F9 /* MyFramework2.framework */; };
 		211281FE21BEBBB90016E7F9 /* MyFramework2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211281FD21BEBBB90016E7F9 /* MyFramework2Tests.swift */; };
 		2112820021BEBBB90016E7F9 /* MyFramework2.h in Headers */ = {isa = PBXBuildFile; fileRef = 211281F221BEBBB90016E7F9 /* MyFramework2.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2112820A21BEBC600016E7F9 /* MyClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2112820921BEBC600016E7F9 /* MyClass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,7 @@
 		211281F821BEBBB90016E7F9 /* MyFramework2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyFramework2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		211281FD21BEBBB90016E7F9 /* MyFramework2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFramework2Tests.swift; sourceTree = "<group>"; };
 		211281FF21BEBBB90016E7F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2112820921BEBC600016E7F9 /* MyClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyClass.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 			children = (
 				211281F221BEBBB90016E7F9 /* MyFramework2.h */,
 				211281F321BEBBB90016E7F9 /* Info.plist */,
+				2112820921BEBC600016E7F9 /* MyClass.swift */,
 			);
 			path = MyFramework2;
 			sourceTree = "<group>";
@@ -148,6 +151,7 @@
 				TargetAttributes = {
 					211281EE21BEBBB90016E7F9 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
 					211281F721BEBBB90016E7F9 = {
 						CreatedOnToolsVersion = 10.1;
@@ -194,6 +198,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2112820A21BEBC600016E7F9 /* MyClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +346,7 @@
 		2112820421BEBBB90016E7F9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -349,14 +355,17 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = MyFramework2/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xiaoyao.MyFramework2;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -365,6 +374,7 @@
 		2112820521BEBBB90016E7F9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -373,11 +383,13 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = MyFramework2/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xiaoyao.MyFramework2;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -389,6 +401,7 @@
 		2112820721BEBBB90016E7F9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MyFramework2Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -406,6 +419,7 @@
 		2112820821BEBBB90016E7F9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MyFramework2Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
